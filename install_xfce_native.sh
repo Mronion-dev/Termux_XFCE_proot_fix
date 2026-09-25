@@ -829,7 +829,7 @@ cd $PREFIX/var/lib/proot-distro/
 mkdir installed-rootfs
 cd $PREFIX/var/lib/proot-distro/installed-rootfs
 mkdir debian
-ln -s $PREFIX/var/lib/proot-distro/containers/debian/rootfs $PREFIX/var/lib/proot-distro/installed-rootfs
+ln -s $PREFIX/var/lib/proot-distro/containers/debian/rootfs $PREFIX/var/lib/proot-distro/installed-rootfs/debian
 cd ~/
 
 # Set proot DISPLAY
