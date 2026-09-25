@@ -824,6 +824,14 @@ chmod u+rw $PREFIX/var/lib/proot-distro/installed-rootfs/debian/etc/sudoers
 echo "$username ALL=(ALL) NOPASSWD:ALL" | tee -a $PREFIX/var/lib/proot-distro/installed-rootfs/debian/etc/sudoers > /dev/null
 chmod u-w  $PREFIX/var/lib/proot-distro/installed-rootfs/debian/etc/sudoers
 
+# Create Symlink to support more devices/different proot installs (debian)
+cd $PREFIX/var/lib/proot-distro/
+mkdir installed-rootfs
+cd $PREFIX/var/lib/proot-distro/installed-rootfs
+mkdir debian
+ln -s $PREFIX/var/lib/proot-distro/containers/debian/rootfs $PREFIX/var/lib/proot-distro/installed-rootfs
+cd ~/
+
 # Set proot DISPLAY
 echo "export DISPLAY=:0" >> $PREFIX/var/lib/proot-distro/installed-rootfs/debian/home/$username/.bashrc
 
